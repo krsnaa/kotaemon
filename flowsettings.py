@@ -141,7 +141,10 @@ if config("OPENAI_API_KEY", default=""):
                 "OPENAI_EMBEDDINGS_MODEL", default="text-embedding-ada-002"
             ),
             "timeout": 10,
-            "context_length": 8191,
+            # 8191 is the max context length for text-embedding-ada-002
+            # 2048 is the max context length for Cohere embeddings
+            "context_length": 2048,
+            # "context_length": 8191,
         },
         "default": True,
     }
